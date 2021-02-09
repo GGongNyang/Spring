@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.hr{
+	width: 15%;
+	border: 2px solid #330000;
+	float:left;
+}
+
+#left_menu{
+	position: pixed;
+	width: 15%;
+	top: 105px;
+	float: left;
+	border-collapse: collapse;
+	border: hidden;
+}
+
+#left_menu h2{
+	padding-left: 5px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 25px;
+	background-color: #663300;
+}
+
+#left_menu ul, li{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+}
+
+#left_menu ul{
+	
+	}
+
+#left_menu ul li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #808080;
+	padding-left: 10px;
+	list-style: none;
+}
+
+#left_menu ul li a{
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}

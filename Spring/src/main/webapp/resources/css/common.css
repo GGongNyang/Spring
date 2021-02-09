@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+*{
+	padding: 0 auto;
+	margin: 0 auto;
+}
+
+a{
+	color: #000;
+	text-decoration: none;
+}
+
+#content_place{
+	float: right;
+}
+
+#main_color{
+	background-color: #fff0dd;
+	overflow-x: hidden;
+	display: flex; 
+	min-height: 100vh; 
+	flex-direction: column;
+}
+
+.site_size{
+	margin: 0 auto;
+	padding: 0 auto;
+	width: 100%;
+}
+
+.site_max_size{
+	max-width: 1200px;
+}
+
+#fileDiv{
+	line-height: 30px;
+	padding-left: 5px;
+}
+
+#btn_place{
+	float: right;
+}
+
+.btn{
+	margin: 10px 5px 10px 5px;
+	float: right;
+	font-weight: bold;
+	width:80px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 15px;
+	
+}
+
+.btn_green{
+	border: 2px solid #330000;
+	background-color: #fff;
+	color: #330000;
+}
+
+.btn_green:hover{
+	background-color: #330000;
+	color: #fff;
+}
+
+.btn_red{
+	border: 2px solid #CC0000;
+	background-color: #fff;
+	color: #CC0000;
+}
+
+.btn_red:hover{
+	background-color: #CC0000;
+	color: #fff;
+}
+
+.btn_blue{
+	border: 2px solid #003399;
+	background-color: #fff;
+	color: #003399;
+}
+
+.btn_blue:hover{
+	background-color: #003399;
+	color: #fff;
+}
+
+#fileDiv input[type="file"]{
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border: 0;
+}
+
+#fileDiv label{
+	display: inline-block;
+	color: #999;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+}
+
+#fileDiv .upload{
+	display: inline-block;
+	height: 35px;
+	font-size: 18px;
+	padding: 0 10px;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+}

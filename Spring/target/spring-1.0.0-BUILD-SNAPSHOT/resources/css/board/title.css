@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.ti_size{
+	width: 100%;
+	background-color: #693b00;
+	height: 400px;
+}
+
+.ti_sub_size{
+	max-width: 1200px;
+}

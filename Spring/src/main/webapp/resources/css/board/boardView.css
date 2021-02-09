@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#bo_view{
+	width: 80%;
+	float: right;
+}
+
+#bo_view_table{
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+	background-color: #fff;
+	float: right;
+}
+
+#bo_view_table .title{
+	padding-top:40px;
+	float: left;
+	line-height: 50px;
+	font-size: 25px;
+	font-weight: bold;
+	width: 950px;
+	text-align: left;
+}
+
+#bo_view_table .additional{
+	line-height: 20px;
+	padding-bottom: 10px;
+}
+
+#bo_view_table .additional span{
+	
+}

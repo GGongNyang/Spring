@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+<resultMap type="HashMap" id="CLOB_STRING">
+	<result property="BCONTENT" column="BCONTENT" jdbcType="CLOB" javaType="java.lang.String" />
+</resultMap>
+
+<select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
+
+	<![CDATA[
+	SELECT 
+		BNO,
+		SUB_BNO,
+		BTITLE,
+		BREG_NICK_NM,
+		TO_CHAR(BREG_DT, 'YYYY-MM-DD') AS BREG_DT,
+		BHIT,
+		PCODE,
+		PTYPE
+	FROM
+		SPR_BOARD
+	WHERE
+		DEL_YN = 'N'
+	ORDER BY BNO DESC
+	]]>
+
+</select>
+
+<insert id="insertBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="SUB_BNO">
+
+	<selectKey keyProperty="BNO,SUB_BNO" resultType="hashmap" order="BEFORE">
+	<![CDATA[
+	SELECT 
+		DISTINCT((SELECT NVL(MAX(BNO)+1, 1) FROM SPR_BOARD)) AS BNO,
+		(SELECT NVL(MAX(SUB_BNO)+1, 1) FROM SPR_BOARD WHERE DEL_YN = 'N') AS SUB_BNO
+	FROM 
+		SPR_BOARD
+	]]>
+	</selectKey>
+
+	<![CDATA[
+	INSERT INTO SPR_BOARD
+	(
+		BNO,
+		SUB_BNO,
+		BTITLE,
+		BREG_NICK_NM,
+		BCONTENT,
+		BREG_DT,
+		BHIT,
+		DEL_YN,
+		PCODE,
+		PTYPE
+	)
+	VALUES
+	(
+		SPR_BOARD_BNO.NEXTVAL,
+		#{SUB_BNO},
+		#{TITLE},
+		#{NICK_NM},
+		#{CONTENTS},
+		SYSDATE,
+		0,
+		'N',
+		#{PCODE},
+		#{PTYPE}
+	)
+	]]>
+
+</insert>
+
+<insert id="insertFile" parameterType="hashmap">
+
+	<![CDATA[
+		INSERT INTO SPR_FILE
+		(
+			FNO,
+			BNO,
+			ORIGINAL_FILE_NAME,
+			STORED_FILE_NAME,
+			FILE_SIZE,
+			CREA_DTM,
+			CREA_ID,
+			DEL_GB
+		)
+		VALUES
+		(
+			SEQ_SPR_FILE_FNO.NEXTVAL,
+			#{BNO},
+			#{ORIGINAL_FILE_NAME},
+			#{STORED_FILE_NAME},
+			#{FILE_SIZE},
+			SYSDATE,
+			'Admin',
+			'N'
+		)
+	]]>
+
+</insert>
+
+<select id="selectFileList" parameterType="hashmap" resultType="hashmap">
+
+	<![CDATA[
+		SELECT
+			FNO,
+			BNO,
+			ORIGINAL_FILE_NAME,
+			ROUND(FILE_SIZE/1024, 1) AS FILE_SIZE
+		FROM
+			SPR_FILE
+		WHERE
+			BNO = #{BNO}
+			AND DEL_GB = 'N'
+	]]>
+
+</select>
+
+<update id="updateHit" parameterType="hashmap">
+	<![CDATA[
+	UPDATE SPR_BOARD
+	SET
+		BHIT = NVL(BHIT, 0) + 1
+	WHERE
+		BNO = #{BNO}
+	]]>
+</update>
+
+<select id="selectBoardView" parameterType="hashmap" resultType="hashmap" resultMap="CLOB_STRING">
+	<![CDATA[
+	SELECT
+		BNO,
+		SUB_BNO,
+		BHIT,
+		BREG_NICK_NM,
+		TO_CHAR(BREG_DT, 'YYYY-MM-DD') AS BREG_DT,
+		BTITLE,
+		BCONTENT
+	FROM
+		SPR_BOARD
+	WHERE
+		BNO = #{BNO}
+	]]>
+</select>
+
+<update id="updateBoard" parameterType="hashmap">
+
+	<![CDATA[
+	UPDATE SPR_BOARD
+	SET
+		BTITLE = #{TITLE},
+		BCONTENT = #{CONTENT}
+	WHERE
+		BNO = #{BNO}
+	]]>
+
+</update>
+
+<update id="deleteBoard" parameterType="hashmap">
+
+	<![CDATA[
+	UPDATE SPR_BOARD
+	SET 
+		DEL_YN = 'Y'
+	WHERE
+		BNO = #{BNO}
+	]]>
+
+</update>
+
+<update id="updateSUB_BNO">
+	
+	<![CDATA[
+	UPDATE SPR_BOARD
+	SET 
+		SUB_BNO = SUB_BNO - 1
+	WHERE
+		SUB_BNO > #{SUB_BNO}			
+		]]>
+	
+</update>
+
+<update id="deleteFileList" parameterType="hashmap">
+
+	<![CDATA[
+	UPDATE 
+		SPR_FILE
+	SET
+		DEL_GB = 'Y'
+	WHERE
+		BNO = #{BNO}
+	]]>
+
+</update>
+
+<update id="updateFile" parameterType="hashmap">
+
+	<![CDATA[
+	UPDATE
+		SPR_FILE
+	SET
+		DEL_GB = 'N'
+	WHERE
+		FNO = #{FNO}	
+	]]>
+
+</update>
+
+</mapper>
+

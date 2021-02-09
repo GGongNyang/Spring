@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+input:focus{
+	outline:none;
+}
+
+#bo_write{
+	width: 80%;
+	float: right;
+}
+
+#bo_write_table{
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+	background-color: #fff;
+	float: right;
+}
+
+#bo_write_table .title{
+	padding-top:40px;
+	float: left;
+	line-height: 50px;
+}
+
+#bo_write_table .title #TITLE{
+	font-size: 25px;
+	font-weight: bold;
+	border: hidden;
+	width: 950px;
+}
+
+#bo_write_table td #NICK_NM{
+	border: hidden;
+	line-height: 20px;
+	padding-bottom: 10px;
+}

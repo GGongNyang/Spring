@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+#bo1_1{
+	float: right;
+	margin: 5px 0 5px 0;
+}
+
+#bo1_1 selectBox{
+	
+}
+
+#bo1_1 seBox{
+	width: 50px;
+}
+
+#bo1_1 seButton{
+	width: 20px;
+}
+
+#bo1_table{
+	float: right;
+	border-collapse:collapse;
+	width: 80%;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000; 
+	border-left: hidden;
+	border-right: hidden;
+}
+
+#bo1_table th{
+	background-color: #663300;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #000;
+}
+
+#bo1_table .small, td strong{
+	font-size: 5px;
+}
+
+#bo1_table td{
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #888888;
+}
+
+#bo1_table .title{
+	text-align: left;
+	padding-left: 5px;
+}
+
+#bo1_table .text_cut{
+	display: block;
+	width: 550px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000;
+	text-decoration: none;
+}
+
+#bo1_table .a{
+	color: #000;
+	text-decoration: none;
+}

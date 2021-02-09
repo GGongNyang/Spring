@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+<select id="selectBoardList" parameterType="hashmap" resultType="hashmap">
+
+	<![CDATA[
+	SELECT 
+		BNO,
+		BTITLE,
+		BREG_NICK_NM,
+		BREG_DT,
+		BHIT
+	FROM
+		SPR_BOARD
+	WHERE
+		DEL_YN = 'N'
+	ORDER BY BNO DESC
+	]]>
+
+</select>
+
+<insert id="insertBoard" parameterType="hashmap">
+
+	<selectKey keyProperty="BNO,SUB_BNO" resultType="int" order="BEFORE">
+	SELECT NVL(MAX(BNO + 1), 1) AS BNO, NVL(MAX(SUB_BNO), 1) AS SUB_BNO FROM SPR_BOARD 
+	</selectKey>
+
+	<![CDATA[
+	INSERT INTO SPR_BOARD
+	(
+		BNO,
+		SUB_BNO,
+		BTITLE,
+		BREG_NICK_NM,
+		BCONTENT,
+		BREG_DT,
+		BHIT,
+		DEL_YN
+	)
+	VALUES
+	(
+		#{BNO},
+		#{SUB_BNO},
+		#{TITLE},
+		#{NICK_NM},
+		#{CONTENT},
+		SYSDATE,
+		0,
+		'N'
+	)
+	]]>
+
+</insert>
+
+</mapper>
+

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.top_header{
+	padding:0 auto;
+	maring: 0 auto;
+	height: 30px;
+}
+
+.top_header select{
+	float: left;
+	margin: 3px 0 0 0;
+	height:24px;
+	width:70px;
+}
+
+.header_text{
+	text-decoration: none;
+	line-height: 30px;
+	float: right;
+	color: #ffffff;
+}
+
+.he_r_img{
+	position: relative;
+	top: 20px;
+	padding-left: 15px;
+	float: right;
+}
+
+.he_size{
+	background-color: #ffffff;
+	width: 100%;
+}
+
+.he_sub_size{
+	max-width: 1200px;
+}
