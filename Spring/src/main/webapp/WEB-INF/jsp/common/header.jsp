@@ -33,7 +33,7 @@
 				<option value="eng" >ENG</option>
 			</select>
 			
-			<a href="/login/openLogin.do" class="header_text">로그인</a><p class="header_text">&nbsp;&nbsp;|&nbsp;&nbsp;</p><a href="/join/openJoin.do" class="header_text">회원가입</a>
+			<a href="/member/memberLogin.do" class="header_text">로그인</a><p class="header_text">&nbsp;&nbsp;|&nbsp;&nbsp;</p><a href="/member/memberJoin.do" class="header_text">회원가입</a>
 		</div>
 		
 		<!-- 왼쪽 -->
