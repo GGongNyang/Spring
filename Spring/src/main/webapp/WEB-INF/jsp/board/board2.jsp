@@ -116,7 +116,6 @@
 			<input type="hidden" id="PTYPE" value="${ptype }">
 		</a>
 		
-		<a href = "#" onClick="window.open('/board/openPop.do', 'window 팝업', 'width=300, height=500, menubar=no, status=no, toolbar=no')">팝업 테스트</a>
 	</section>
 </div>
 </div>
