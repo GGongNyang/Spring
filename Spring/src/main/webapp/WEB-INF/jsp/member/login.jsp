@@ -28,10 +28,6 @@ date		2021-02-09
 <div class="site_size">
 <div class="site_max_size">
 
-<!-- <div style="background-color: #99FF66; height: 20px;">
-	<p style="float: right;">메인 > 게시판 > 자유 게시판</p>
-</div> -->
-
 <jsp:include page="../common/left_menu.jsp"></jsp:include>
 
 
