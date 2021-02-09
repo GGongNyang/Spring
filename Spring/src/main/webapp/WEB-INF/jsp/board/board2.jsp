@@ -6,22 +6,8 @@ date		2021-02-09
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Spring</title>
 
 <c:set var="ptype" value="board" />
-
-<!-- css 파일 -->
-<link href="<c:url value="../resources/css/board/board2.css" />" rel="stylesheet">
-
-</head>
-
-<jsp:include page="../common/header.jsp"></jsp:include>
-<jsp:include page="../common/nav.jsp"></jsp:include>
-
-<body id="main_color">
 
 <img alt="" id="bo2_img" src="../resources/img/main/banner1.png" />
 
@@ -36,7 +22,7 @@ date		2021-02-09
 
 	<h2 id="h2">자유 게시판</h2>
 
-	<section id="bo2_1">
+	<section id="bo">
 		<select class="selectBox">
 			<option value="" selected="selected">제목 + 작성자</option>
 			<option value="">제목</option>
@@ -46,7 +32,7 @@ date		2021-02-09
 		<input type="submit" class="seButton" id="se_button" name="se_button" value="search" />
 	</section>
 	
-	<table id="bo2_table">
+	<table id="bo_table">
 		<colgroup>
 			<col width="10%" />
 			<col width="1%" />
@@ -164,6 +150,3 @@ date		2021-02-09
 		comSubmit.submit(); 
 	}
 </script>
-
-</html>
-

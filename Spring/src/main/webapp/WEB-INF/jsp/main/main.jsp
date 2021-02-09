@@ -96,15 +96,7 @@
 
 <div class="main">
 	<div class="sub_main">
-		<% 
-		String dinner = "";
-		String lunch  = "";
-		dinner = request.getParameter("dinner"); 
-		lunch  = request.getParameter("lunch");
-		%>
-		
-		dinner = <%= dinner %><br>
-		lunch  = <%= lunch %>  
+		 
 	</div>
 </div>
 

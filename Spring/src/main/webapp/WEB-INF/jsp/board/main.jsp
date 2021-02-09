@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<body>
+
+<!-- css 파일 -->
+<link href="<c:url value="../resources/css/board/board.css" />" rel="stylesheet">
+
+<jsp:include page="../common/header.jsp"></jsp:include>
+<jsp:include page="../common/nav.jsp"></jsp:include>
+
+<body id="main_color">
 
 	<%
 	String att_pcode = "";
@@ -66,6 +71,4 @@
 		</c:otherwise>
 	
 	</c:choose>
-</body>
-</html>
 

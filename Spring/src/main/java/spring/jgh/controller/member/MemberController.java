@@ -12,24 +12,37 @@ import spring.common.common.CommandMap;
 
 @Controller
 public class MemberController {
-Logger log = Logger.getLogger(this.getClass());
+	Logger log = Logger.getLogger(this.getClass());
 	
-		//로그인 페이지로 이동
-		@RequestMapping(value="/member/memberLogin.do")
-		public ModelAndView memberLogin(CommandMap commandMap) throws Exception{
+	String pcode;
+	String ptype;
+	
+		//페이지 이동
+		@RequestMapping(value="/member/memberInfo.do", method = {RequestMethod.GET, RequestMethod.POST})
+		public ModelAndView memberInfo(CommandMap commandMap, HttpServletRequest request) throws Exception{
 			
-			ModelAndView mv = new ModelAndView("/member/login");
+			//get방식과 post방식에서 값을 넣는게 다름
+			if(request.getParameter("pcode") == null || request.getParameter("pcode").equals("")) {
+				//System.out.println("PCODE = " + commandMap.get("PCODE").toString());
+				pcode = commandMap.get("PCODE").toString();
+			} else {
+				pcode = request.getParameter("pcode");
+			}
+			
+			ModelAndView mv = null;
+			
+			//pcode의 값에 따라 보여지는 페이지가 달라진다.
+			if(pcode.equals("loginF")) {
+				mv = new ModelAndView("/member/login");
+			} else if(pcode.equals("memFind")) {
+				mv = new ModelAndView("/member/memFind");
+			} else if(pcode.equals("join")) {
+				mv = new ModelAndView("/member/join");
+			}
+			
+			mv.addObject("pcode", pcode);
 			
 			return mv;
 		}
 		
-		//로그인 페이지로 이동
-		@RequestMapping(value="/member/memberJoin.do")
-		public ModelAndView memberJoin(CommandMap commandMap) throws Exception{
-			
-			ModelAndView mv = new ModelAndView("/member/join");
-			
-			return mv;
-		}
-	
 }

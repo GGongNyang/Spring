@@ -11,7 +11,7 @@ date		2021-02-09
 <head>
 <title>Spring</title>
 
-<c:set var="ptype" value="board" />
+<c:set var="ptype" value="member" />
 
 <!-- css 파일 -->
 <link href="<c:url value="../resources/css/board/board2.css" />" rel="stylesheet">

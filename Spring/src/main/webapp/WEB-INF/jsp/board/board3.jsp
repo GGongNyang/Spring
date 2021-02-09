@@ -1,15 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Spring</title>
-
 <c:set var="ptype" value="image" />
 
 <!-- css 파일 -->
-<link href="<c:url value="../resources/css/board/board3.css" />" rel="stylesheet">
+<link href="<c:url value="../resources/css/board/board.css" />" rel="stylesheet">
 
 </head>
 
@@ -25,7 +20,7 @@
 
 <h2>이미지 게시판</h2>
 	
-	<section id="board2_1">	
+	<section id="board_1">	
 		<select class="selectBox">
 			<option value="" selected="selected">제목 + 작성자</option>
 			<option value="">제목</option>
@@ -117,5 +112,4 @@
 </div>
 </div>
 
-</html>
 

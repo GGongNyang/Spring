@@ -9,7 +9,7 @@
 <c:set var="ptype" value="gongji" />
 
 <!-- css 파일 -->
-<link href="<c:url value="../resources/css/board/board1.css" />" rel="stylesheet">
+<link href="<c:url value="../resources/css/board/board.css" />" rel="stylesheet">
 
 </head>
 
@@ -25,7 +25,7 @@
 
 <h2>공지사항</h2>
 	
-	<section id="bo1_1">	
+	<section id="bo">	
 		<select class="selectBox">
 			<option value="" selected="selected">제목 + 작성자</option>
 			<option value="">제목</option>
@@ -37,7 +37,7 @@
 	
 	<jsp:include page="../common/left_menu.jsp"></jsp:include>
 	
-	<table id="bo1_table">
+	<table id="bo_table">
 		<colgroup>
 			<col width="10%" />
 			<col width="1%" />

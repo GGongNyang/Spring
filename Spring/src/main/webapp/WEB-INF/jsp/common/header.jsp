@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ page import = "java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <script src="<c:url value='../js/common.js'/>" charset="utf-8"></script>
 
+<%Map<String, String> pcode = new HashMap<String, String>(); %>
+
+<c:set target="<%= pcode %>" property="pcode" value="${pcode }" />
+
+<% String real_pcode = pcode.get("pcode"); 
+
+System.out.println("real_pcode >>>>>>" + real_pcode);
+
+%>
+
 </head>
 <body>
 
@@ -33,7 +44,7 @@
 				<option value="eng" >ENG</option>
 			</select>
 			
-			<a href="/member/memberLogin.do" class="header_text">로그인</a><p class="header_text">&nbsp;&nbsp;|&nbsp;&nbsp;</p><a href="/member/memberJoin.do" class="header_text">회원가입</a>
+			<a href="/member/memberInfo.do?pcode=loginF" class="header_text">로그인</a><p class="header_text">&nbsp;&nbsp;|&nbsp;&nbsp;</p><a href="/member/memberInfo.do?pcode=join" class="header_text">회원가입</a>
 		</div>
 		
 		<!-- 왼쪽 -->

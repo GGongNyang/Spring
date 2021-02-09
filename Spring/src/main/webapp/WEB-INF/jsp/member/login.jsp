@@ -11,8 +11,6 @@ date		2021-02-09
 <head>
 <title>Spring</title>
 
-<c:set var="ptype" value="board" />
-
 <!-- css 파일 -->
 <link href="<c:url value="../resources/css/board/board2.css" />" rel="stylesheet">
 
@@ -26,13 +24,13 @@ date		2021-02-09
 <img alt="" id="bo2_img" src="../resources/img/main/banner1.png" />
 
 <div class="site_size">
-<div class="site_max_size">
+	<div class="site_max_size">
 
-<jsp:include page="../common/left_menu.jsp"></jsp:include>
+	<jsp:include page="../common/left_menu.jsp"></jsp:include>
 
+	
 
-
-</div>
+	</div>
 </div>
 
 
